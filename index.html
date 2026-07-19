@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11th Street Auto Service | Sheboygan, WI Auto Repair</title>
+    <meta name="description" content="Honest, reliable auto repair in Sheboygan, WI since 2007. Family-owned, NAPA AutoCare affiliated. We service all makes and models.">
+    
+    <!-- Google Fonts: Montserrat (Bold Headlines) & Open Sans (Body Text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for professional auto & trust icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration to match requested branding palette -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        steelBlue: {
+                            50: '#f0f5fa',
+                            100: '#deeaf3',
+                            600: '#3b7197',
+                            700: '#2d597b',
+                            800: '#234661',
+                            900: '#1a3347',
+                        },
+                        charcoal: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        safetyOrange: {
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-safetyOrange-500 selection:text-white">
+
+    <!-- 1. STICKY HEADER -->
+    <header class="sticky top-0 z-40 w-full bg-white border-b border-slate-200 shadow-sm backdrop-blur-md bg-opacity-95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo & Shop Name -->
+                <a href="#hero" class="flex items-center space-x-3 group">
+                    <div class="bg-steelBlue-700 text-white p-2.5 rounded-lg group-hover:bg-safetyOrange-500 transition-colors duration-300">
+                        <i class="fa-solid fa-wrench text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="block font-display text-xl sm:text-2xl font-extrabold tracking-tight text-charcoal-900 leading-none">11th Street</span>
+                        <span class="block text-xs font-semibold tracking-wider text-steelBlue-600 uppercase">Auto Service</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#why-choose-us" class="font-semibold text-slate-600 hover:text-steelBlue-700 transition">Why Us</a>
+                    <a href="#services" class="font-semibold text-slate-600 hover:text-steelBlue-700 transition">Services</a>
+                    <a href="#about" class="font-semibold text-slate-600 hover:text-steelBlue-700 transition">About Joe</a>
+                    <a href="#testimonials" class="font-semibold text-slate-600 hover:text-steelBlue-700 transition">Reviews</a>
+                    <a href="#location" class="font-semibold text-slate-600 hover:text-steelBlue-700 transition">Location & Hours</a>
+                </nav>
+
+                <!-- Desktop Action Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="tel:9208032676" class="flex items-center space-x-2 text-charcoal-900 font-bold hover:text-steelBlue-700 transition duration-150">
+                        <i class="fa-solid fa-phone text-safetyOrange-500"></i>
+                        <span>(920) 803-2676</span>
+                    </a>
+                    <button onclick="openModal()" class="bg-safetyOrange-500 hover:bg-safetyOrange-600 text-white font-bold py-2.5 px-5 rounded shadow hover:shadow-md transition-all duration-150 transform hover:-translate-y-0.5">
+                        Get a Quote
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Menu Button -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-600 hover:text-charcoal-900 focus:outline-none" aria-label="Toggle Menu">
+                        <i id="menu-icon" class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 shadow-lg px-4 pt-2 pb-6 space-y-3 transition-all">
+            <a href="#why-choose-us" class="block font-semibold text-slate-700 py-2 hover:text-steelBlue-700">Why Us</a>
+            <a href="#services" class="block font-semibold text-slate-700 py-2 hover:text-steelBlue-700">Services</a>
+            <a href="#about" class="block font-semibold text-slate-700 py-2 hover:text-steelBlue-700">About Joe</a>
+            <a href="#testimonials" class="block font-semibold text-slate-700 py-2 hover:text-steelBlue-700">Reviews</a>
+            <a href="#location" class="block font-semibold text-slate-700 py-2 hover:text-steelBlue-700">Location & Hours</a>
+            <hr class="border-slate-100">
+            <div class="flex flex-col space-y-3 pt-2">
+                <a href="tel:9208032676" class="flex items-center justify-center space-x-2 text-charcoal-900 font-bold py-2 border border-slate-200 rounded">
+                    <i class="fa-solid fa-phone text-safetyOrange-500"></i>
+                    <span>Call (920) 803-2676</span>
+                </a>
+                <button onclick="openModal()" class="w-full bg-safetyOrange-500 text-white font-bold py-2.5 rounded text-center shadow">
+                    Get a Quote
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="hero" class="relative bg-charcoal-900 text-white py-20 lg:py-32 overflow-hidden">
+        <!-- Semi-transparent overlay with modern subtle grid pattern placeholder -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#3b7297_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-steelBlue-900/80 border border-steelBlue-600/30 px-3 py-1.5 rounded-full text-sm text-steelBlue-100 font-semibold">
+                        <i class="fa-solid fa-certificate text-safetyOrange-500"></i>
+                        <span>NAPA AutoCare Affiliated</span>
+                    </div>
+                    
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+                        Honest, No-BS Auto Repair in <span class="text-transparent bg-clip-text bg-gradient-to-r from-safetyOrange-500 to-amber-400">Sheboygan</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0">
+                        Family-owned since 2007. We service <span class="font-bold text-white underline decoration-safetyOrange-500">ALL Makes & Models</span>—from standard domestic commuter cars to foreign imports and classic muscle.
+                    </p>
+
+                    <!-- Trust indicators -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 py-2 text-slate-300 text-sm">
+                        <span><i class="fa-solid fa-star text-safetyOrange-500 mr-1.5"></i>4.8+ Rated</span>
+                        <span><i class="fa-solid fa-circle-check text-safetyOrange-500 mr-1.5"></i>Fair Pricing</span>
+                        <span><i class="fa-solid fa-shield text-safetyOrange-500 mr-1.5"></i>Family-Owned</span>
+                    </div>
+
+                    <!-- Call To Actions -->
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-2">
+                        <a href="tel:9208032676" class="bg-safetyOrange-500 hover:bg-safetyOrange-600 text-white text-lg font-bold py-3.5 px-8 rounded shadow-lg transition-all duration-150 flex items-center justify-center gap-3 transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-phone"></i>
+                            Call (920) 803-2676
+                        </a>
+                        <button onclick="openModal()" class="bg-transparent hover:bg-white/10 border-2 border-slate-400 text-white text-lg font-bold py-3.5 px-8 rounded transition-all duration-150">
+                            Schedule Service
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hero visual block (Badge & trust cards) -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative bg-slate-800 border border-slate-700 p-8 rounded-2xl shadow-2xl max-w-md w-full">
+                        <div class="absolute -top-5 -right-5 bg-safetyOrange-500 text-white font-display text-xs font-extrabold px-4 py-2 rounded shadow-lg transform rotate-6 uppercase tracking-wider">
+                            Since 2007
+                        </div>
+                        <h3 class="font-display text-xl font-bold mb-4 text-white">Need a Quote Fast?</h3>
+                        <p class="text-sm text-slate-300 mb-6">Describe the issue your car is experiencing and we will get back to you with an honest breakdown.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <div class="bg-steelBlue-900/60 p-2 rounded text-safetyOrange-500">
+                                    <i class="fa-solid fa-handshake"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm text-white">No Hidden Fees</h4>
+                                    <p class="text-xs text-slate-400">We explain every repair clearly. No unnecessary upcharges.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="bg-steelBlue-900/60 p-2 rounded text-safetyOrange-500">
+                                    <i class="fa-solid fa-gears"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm text-white">Expert Diagnosis</h4>
+                                    <p class="text-xs text-slate-400">Led by Joe, an experienced tech using modern diagnostics.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="openModal()" class="w-full mt-6 bg-steelBlue-700 hover:bg-steelBlue-600 text-white py-3 rounded font-bold text-sm tracking-wide uppercase transition duration-150">
+                            Request Diagnostic Detail
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. WHY CHOOSE US -->
+    <section id="why-choose-us" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-safetyOrange-500 font-bold tracking-wider uppercase text-sm">Why Choose Us</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-charcoal-900 mt-2">The Local, Family-Owned Difference</h2>
+                <div class="w-20 h-1.5 bg-safetyOrange-500 mx-auto mt-4 rounded-full"></div>
+                <p class="text-lg text-slate-600 mt-4">We are not a sleek corporate chain. We are your neighbors, committed to honest work and straightforward advice.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Trust Point 1 -->
+                <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl hover:shadow-md transition-shadow duration-250">
+                    <div class="w-12 h-12 bg-steelBlue-100 text-steelBlue-700 flex items-center justify-center rounded-lg mb-5 text-xl font-bold">
+                        <i class="fa-solid fa-ban"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-charcoal-900 mb-2">No-BS Advice</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        We will never sell you on a service you do not need. If your brakes still have another 5,000 miles, we will tell you honestly.
+                    </p>
+                </div>
+
+                <!-- Trust Point 2 -->
+                <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl hover:shadow-md transition-shadow duration-250">
+                    <div class="w-12 h-12 bg-steelBlue-100 text-steelBlue-700 flex items-center justify-center rounded-lg mb-5 text-xl font-bold">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-charcoal-900 mb-2">ALL Makes & Models</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        From modern fuel-efficient hybrids and imports to classic domestic muscle cars. We have the skills and tools to handle them all.
+                    </p>
+                </div>
+
+                <!-- Trust Point 3 -->
+                <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl hover:shadow-md transition-shadow duration-250">
+                    <div class="w-12 h-12 bg-steelBlue-100 text-steelBlue-700 flex items-center justify-center rounded-lg mb-5 text-xl font-bold">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-charcoal-900 mb-2">Fair, Flat Rates</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Keeping your vehicle safe should not deplete your bank account. We provide highly competitive, transparent, and fair pricing.
+                    </p>
+                </div>
+
+                <!-- Trust Point 4 -->
+                <div class="bg-slate-50 border border-slate-100 p-6 rounded-xl hover:shadow-md transition-shadow duration-250">
+                    <div class="w-12 h-12 bg-steelBlue-100 text-steelBlue-700 flex items-center justify-center rounded-lg mb-5 text-xl font-bold">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-charcoal-900 mb-2">Pre-Purchase Inspections</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Buying a used car? Bring it in first. We will run a complete, independent inspection to safeguard your prospective purchase.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SERVICES GRID -->
+    <section id="services" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-safetyOrange-500 font-bold tracking-wider uppercase text-sm">What We Do</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-charcoal-900 mt-2">Comprehensive Auto Repair</h2>
+                <div class="w-20 h-1.5 bg-safetyOrange-500 mx-auto mt-4 rounded-full"></div>
+                <p class="text-lg text-slate-600 mt-4">From routine maintenance to complex mechanical diagnostic work, our team is equipped to handle your vehicle's needs.</p>
+            </div>
+
+            <!-- Service Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                
+                <!-- Service 1 -->
+                <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-1">
+                    <div class="text-steelBlue-600 mb-4 text-3xl"><i class="fa-solid fa-oil-can"></i></div>
+                    <h3 class="font-display font-bold text-slate-900 text-base mb-1">Oil Changes</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Premium synthetic or conventional oil, complete with filter replacement and a multi-point inspection check.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-1">
+                    <div class="text-steelBlue-600 mb-4 text-3xl"><i class="fa-solid fa-disc-drive"></i></div>
+                    <h3 class="font-display font-bold text-slate-900 text-base mb-1">Brake Service</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Pad and rotor replacements, caliper servicing, and brake fluid flushes to ensure dependable stopping power.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-1">
+                    <div class="text-steelBlue-600 mb-4 text-3xl"><i class="fa-solid fa-truck-monster"></i></div>
+                    <h3 class="font-display font-bold text-slate-900 text-base mb-1">Tires Sales & Fit</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Find major brands at great pricing. Full tire mounting, balancing, rotation, and repair services available.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-1">
+                    <div class="text-steelBlue-600 mb-4 text-3xl"><i class="fa-solid fa-gauge"></i></div>
+                    <h3 class="font-display font-bold text-slate-900 text-base mb-1">Engine Repair</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Computer diagnostics, engine tuning, spark plugs, sensors, and major mechanical overhauls.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-1">
+                    <div class="text-steelBlue-600 mb-4 text-3xl"><i class="fa-solid fa-gears"></i></div>
+                    <h3 class="font-display font-bold text-slate-900 text-base mb-1">Transmission</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Transmission diagnostics, fluid exchange, filter replacements, and light repair services.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-1">
+                    <div class="text-steelBlue-600 mb-4 text-3xl"><i class="fa-solid fa-arrows-up-down"></i></div>
+                    <h3 class="font-display font-bold text-slate-900 text-base mb-1">Struts & Suspension</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Struts, shocks, control arms, and tie rod ends to restore original handling, comfort, and safety.</p>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-1">
+                    <div class="text-steelBlue-600 mb-4 text-3xl"><i class="fa-solid fa-circle-notch"></i></div>
+                    <h3 class="font-display font-bold text-slate-900 text-base mb-1">Wheel Bearings</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Diagnostic and replacement service for roaring or loose wheel hubs to ensure a quiet, safe drive.</p>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-1">
+                    <div class="text-steelBlue-600 mb-4 text-3xl"><i class="fa-solid fa-temperature-empty"></i></div>
+                    <h3 class="font-display font-bold text-slate-900 text-base mb-1">Coolant Service</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Radiator flushes, leak repairs, and thermostat replacement to protect against winter freeze and summer heat.</p>
+                </div>
+
+                <!-- Service 9 -->
+                <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-1">
+                    <div class="text-steelBlue-600 mb-4 text-3xl"><i class="fa-solid fa-clipboard-list"></i></div>
+                    <h3 class="font-display font-bold text-slate-900 text-base mb-1">Inspections</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Pre-purchase and safety evaluations so you can proceed with confidence on a used-car transaction.</p>
+                </div>
+
+                <!-- Service 10 -->
+                <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-1">
+                    <div class="text-steelBlue-600 mb-4 text-3xl"><i class="fa-solid fa-car"></i></div>
+                    <h3 class="font-display font-bold text-slate-900 text-base mb-1">General Repairs</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">Alternators, batteries, starters, belt replacements, and troubleshooting for all electrical/mechanical issues.</p>
+                </div>
+
+            </div>
+
+            <!-- Custom Quote CTA -->
+            <div class="mt-12 bg-charcoal-900 text-white rounded-xl p-8 flex flex-col md:flex-row items-center justify-between shadow-xl gap-6">
+                <div>
+                    <h3 class="font-display text-xl sm:text-2xl font-bold">Have a unique concern or a classic car restoration issue?</h3>
+                    <p class="text-slate-300 mt-1">Talk to Joe directly. We service foreign imports, domestic commuter classics, and custom builds.</p>
+                </div>
+                <button onclick="openModal()" class="whitespace-nowrap bg-safetyOrange-500 hover:bg-safetyOrange-600 text-white font-bold py-3 px-6 rounded transition duration-150 shadow">
+                    Ask Joe Directly
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ABOUT SECTION -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left: Text content -->
+                <div class="space-y-6">
+                    <span class="text-safetyOrange-500 font-bold tracking-wider uppercase text-sm">Family-Owned & Operated</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-charcoal-900">Meet Joe & The Story Behind 11th Street</h2>
+                    <div class="w-20 h-1.5 bg-safetyOrange-500 rounded-full"></div>
+                    
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Since opening our doors in **2007**, 11th Street Auto Service has been a staple of the Sheboygan, WI community. Founded and run by owner and lead mechanic **Joe**, our shop was built on a very simple business model: treat customers like family, keep pricing fair, and always provide honest, straightforward advice.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        As a proud **NAPA AutoCare Center**, we guarantee our parts and diagnostics back up our workmanship. We pride ourselves on clear, straightforward explanations rather than high-pressure sales pitches. If you don't need a repair, we'll let you know. If you do, we'll give you a reasonable quote and complete it properly the first time.
+                    </p>
+                    
+                    <!-- Affiliation badges placeholders -->
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="border border-slate-200 rounded-lg p-4 flex items-center gap-3">
+                            <i class="fa-solid fa-users text-2xl text-steelBlue-600"></i>
+                            <div>
+                                <h4 class="font-bold text-xs text-charcoal-900 uppercase">Local Focus</h4>
+                                <p class="text-xs text-slate-500">Proudly serving Sheboygan families</p>
+                            </div>
+                        </div>
+                        <div class="border border-slate-200 rounded-lg p-4 flex items-center gap-3">
+                            <i class="fa-solid fa-award text-2xl text-steelBlue-600"></i>
+                            <div>
+                                <h4 class="font-bold text-xs text-charcoal-900 uppercase">NAPA Quality</h4>
+                                <p class="text-xs text-slate-500">Quality replacement auto parts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Stylized Card with Lead Mechanic Bio -->
+                <div class="flex justify-center">
+                    <div class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-2xl p-8 max-w-md w-full relative">
+                        <div class="bg-steelBlue-700 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mx-auto mb-6 shadow-md">
+                            <i class="fa-solid fa-user-gear"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-center text-charcoal-900">"No corporate quotas. Just real mechanics solving problems."</h3>
+                        <p class="text-slate-500 text-center text-xs mt-1">— Joe, Lead Mechanic & Owner</p>
+                        
+                        <hr class="border-slate-200 my-6">
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-sm text-slate-700">
+                                <i class="fa-solid fa-check text-safetyOrange-500 font-bold"></i>
+                                <span>ASE Certified Level diagnostic equipment</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-700">
+                                <i class="fa-solid fa-check text-safetyOrange-500 font-bold"></i>
+                                <span>Over 25+ combined years of automotive experience</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-700">
+                                <i class="fa-solid fa-check text-safetyOrange-500 font-bold"></i>
+                                <span>Complete multi-point checklist with every job</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-safetyOrange-500 font-bold tracking-wider uppercase text-sm">Customer Reviews</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-charcoal-900 mt-2">What Sheboygan is Saying</h2>
+                <div class="w-20 h-1.5 bg-safetyOrange-500 mx-auto mt-4 rounded-full"></div>
+                <p class="text-lg text-slate-600 mt-4">We are deeply grateful for our stellar 4.8+ rating. Hear directly from some of our local patrons.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-safetyOrange-500 text-sm flex gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-slate-600 italic">
+                            "Joe is the only mechanic in Sheboygan I trust. He told me frankly that I did not need to replace my front brake pads yet, whereas another franchise shop tried to charge me $800 on the spot. Deeply appreciate the honesty!"
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="bg-steelBlue-100 text-steelBlue-700 font-bold rounded-full w-10 h-10 flex items-center justify-center text-sm">
+                            MR
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Mike R.</h4>
+                            <p class="text-xs text-slate-500">Sheboygan Resident</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-safetyOrange-500 text-sm flex gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star text-slate-300"></i>
+                        </div>
+                        <p class="text-sm text-slate-600 italic">
+                            "I brought my classic Mustang in for engine tuning. Joe handled it beautifully, treating the car with great care. It runs exceptionally smoothly now. Fast turnaround and extremely reasonable rates."
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="bg-steelBlue-100 text-steelBlue-700 font-bold rounded-full w-10 h-10 flex items-center justify-center text-sm">
+                            SK
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Sarah K.</h4>
+                            <p class="text-xs text-slate-500">Kohler Resident</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="text-safetyOrange-500 text-sm flex gap-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-slate-600 italic">
+                            "No corporate runaround or upsells. Just fast service, great communication, and honest diagnosis. I appreciate 11th Street Auto for providing a service environment you can actually rely on."
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="bg-steelBlue-100 text-steelBlue-700 font-bold rounded-full w-10 h-10 flex items-center justify-center text-sm">
+                            DL
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">David L.</h4>
+                            <p class="text-xs text-slate-500">Sheboygan Resident</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. LOCATION & HOURS -->
+    <section id="location" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                
+                <!-- Hours & Info Column -->
+                <div class="space-y-6">
+                    <span class="text-safetyOrange-500 font-bold tracking-wider uppercase text-sm">Find Us</span>
+                    <h2 class="font-display text-3xl font-extrabold text-charcoal-900">Stop By Our Shop</h2>
+                    <div class="w-20 h-1.5 bg-safetyOrange-500 rounded-full"></div>
+                    
+                    <p class="text-slate-600">
+                        Conveniently located on **S 11th St** in Sheboygan. Walk-ins are always welcome, but scheduling ahead ensures we can get your diagnostic run and car fixed on time.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="text-steelBlue-600 text-xl pt-1"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900">Address</h4>
+                                <p class="text-sm text-slate-600">1206 S 11th St, Sheboygan, WI 53081</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="text-steelBlue-600 text-xl pt-1"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900">Phone</h4>
+                                <a href="tel:9208032676" class="text-sm text-steelBlue-600 hover:underline font-bold">(920) 803-2676</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hours Table -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg overflow-hidden shadow-sm">
+                        <div class="bg-slate-100 px-4 py-3 border-b border-slate-200">
+                            <h3 class="font-display font-bold text-sm text-charcoal-900 flex items-center gap-2">
+                                <i class="fa-solid fa-clock text-safetyOrange-500"></i>
+                                Hours of Operation
+                            </h3>
+                        </div>
+                        <div class="p-4 space-y-2 text-sm text-slate-700">
+                            <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                <span class="font-semibold">Monday</span>
+                                <span>8:00 AM – 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                <span class="font-semibold">Tuesday</span>
+                                <span>8:00 AM – 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                <span class="font-semibold">Wednesday</span>
+                                <span>8:00 AM – 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                <span class="font-semibold">Thursday</span>
+                                <span>8:00 AM – 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-200/60 pb-1.5">
+                                <span class="font-semibold">Friday</span>
+                                <span>8:00 AM – 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400">
+                                <span class="font-semibold">Saturday</span>
+                                <span class="uppercase tracking-wider text-xs font-bold bg-slate-200 text-slate-500 py-0.5 px-2 rounded">Closed</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400">
+                                <span class="font-semibold">Sunday</span>
+                                <span class="uppercase tracking-wider text-xs font-bold bg-slate-200 text-slate-500 py-0.5 px-2 rounded">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder / Embed Column -->
+                <div class="w-full h-96 bg-slate-100 border border-slate-300 rounded-xl overflow-hidden shadow-md relative">
+                    <!-- Leaflet / Google Maps Mock Placeholder (Allows viewing actual location styling cleanly) -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.4673898144883!2d-87.71764352345579!3d43.74235334666491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8803ff255f00e99d%3A0xe6bf446b14647355!2s1206%20S%2011th%20St%2C%20Sheboygan%2C%20WI%2053081!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus" 
+                        class="w-full h-full border-none"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FOOTER -->
+    <footer class="bg-charcoal-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-steelBlue-700 text-white p-2 rounded">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <span class="font-display text-lg font-bold text-white tracking-tight">11th Street Auto</span>
+                    </div>
+                    <p class="text-xs leading-relaxed text-slate-400">
+                        Serving the Sheboygan community with premier automotive repair and mechanical maintenance services since 2007.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <span class="text-xs tracking-wider uppercase font-bold text-slate-500">NAPA AutoCare Member</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Services Quick Links -->
+                <div class="space-y-4">
+                    <h4 class="text-white font-display font-bold text-sm uppercase tracking-wide">Popular Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#services" class="hover:text-white transition">Brake Inspection & Service</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Oil & Filter Exchange</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Strut, Shock & Suspension Repair</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Engine Diagnostics</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Pre-Purchase Evaluations</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Info -->
+                <div class="space-y-4">
+                    <h4 class="text-white font-display font-bold text-sm uppercase tracking-wide">Contact Details</h4>
+                    <ul class="space-y-2.5 text-xs text-slate-400">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-location-dot text-safetyOrange-500 pt-0.5"></i>
+                            <span>1206 S 11th St, Sheboygan, WI 53081</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-safetyOrange-500"></i>
+                            <a href="tel:9208032676" class="hover:text-white">(920) 803-2676</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-safetyOrange-500"></i>
+                            <span>service@11thstreetauto.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Badging / Affiliation Mention -->
+                <div class="space-y-4">
+                    <h4 class="text-white font-display font-bold text-sm uppercase tracking-wide">Affiliation</h4>
+                    <div class="border border-slate-800 p-4 rounded bg-slate-950/60 text-slate-300">
+                        <p class="text-xs font-bold mb-1 text-white uppercase tracking-wider">NAPA AutoCare Center</p>
+                        <p class="text-[11px] leading-relaxed text-slate-500">
+                            Our nationwide affiliation means we guarantee replacement components of high-level certification, ensuring parts are reliable wherever you travel.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="border-slate-800 my-8">
+
+            <!-- Copyright and legal -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; <span id="current-year"></span> 11th Street Auto Service. All rights reserved.</p>
+                <p class="flex gap-4">
+                    <span>Family Owned & Operated</span>
+                    <span>|</span>
+                    <span>Sheboygan, WI</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE "GET A QUOTE" MODAL -->
+    <div id="quote-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-charcoal-900/80 backdrop-blur-sm hidden" role="dialog" aria-modal="true">
+        <div class="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform scale-95 transition-all duration-300">
+            
+            <!-- Modal Header -->
+            <div class="bg-steelBlue-700 text-white px-6 py-4 flex items-center justify-between">
+                <div>
+                    <h3 class="font-display font-bold text-lg">Get An Honest Quote</h3>
+                    <p class="text-xs text-steelBlue-100">Send us details about your vehicle issue.</p>
+                </div>
+                <button onclick="closeModal()" class="text-white hover:text-safetyOrange-500 transition text-xl focus:outline-none" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Form -->
+            <form id="quote-form" onsubmit="handleFormSubmit(event)" class="p-6 space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="client-name" class="block text-xs font-semibold text-slate-700 mb-1">Your Name *</label>
+                        <input type="text" id="client-name" required class="w-full border border-slate-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-steelBlue-600">
+                    </div>
+                    <div>
+                        <label for="client-phone" class="block text-xs font-semibold text-slate-700 mb-1">Phone Number *</label>
+                        <input type="tel" id="client-phone" required class="w-full border border-slate-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-steelBlue-600">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="client-email" class="block text-xs font-semibold text-slate-700 mb-1">Email Address</label>
+                    <input type="email" id="client-email" class="w-full border border-slate-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-steelBlue-600">
+                </div>
+
+                <div class="grid grid-cols-3 gap-3">
+                    <div>
+                        <label for="vehicle-year" class="block text-xs font-semibold text-slate-700 mb-1">Year</label>
+                        <input type="text" id="vehicle-year" placeholder="e.g., 2012" class="w-full border border-slate-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-steelBlue-600">
+                    </div>
+                    <div class="col-span-2">
+                        <label for="vehicle-make-model" class="block text-xs font-semibold text-slate-700 mb-1">Make & Model *</label>
+                        <input type="text" id="vehicle-make-model" placeholder="e.g., Honda Civic" required class="w-full border border-slate-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-steelBlue-600">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="needed-service" class="block text-xs font-semibold text-slate-700 mb-1">Service Requested</label>
+                    <select id="needed-service" class="w-full border border-slate-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-steelBlue-600">
+                        <option value="oil-change">Oil Change & Maintenance</option>
+                        <option value="brakes">Brakes Diagnostics & Replacement</option>
+                        <option value="tires">Tire Sales & Installation</option>
+                        <option value="engine">Engine Repair / Tuning</option>
+                        <option value="transmission">Transmission Service</option>
+                        <option value="suspension">Struts & Suspension</option>
+                        <option value="diagnostics">Unknown Noise / Diagnostic check</option>
+                        <option value="inspection">Pre-Purchase Vehicle Inspection</option>
+                        <option value="other">General Repair / Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="client-notes" class="block text-xs font-semibold text-slate-700 mb-1">Brief Description of Issue</label>
+                    <textarea id="client-notes" rows="3" placeholder="Tell Joe what's going on with your car..." class="w-full border border-slate-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-steelBlue-600"></textarea>
+                </div>
+
+                <div class="flex items-center gap-2 pt-2">
+                    <input type="checkbox" id="no-bs-agreement" required class="rounded text-steelBlue-600 focus:ring-steelBlue-600">
+                    <label for="no-bs-agreement" class="text-xs text-slate-500">I agree that 11th Street Auto will give me honest, realistic advice without sales pressure. *</label>
+                </div>
+
+                <div class="pt-4 flex gap-3">
+                    <button type="button" onclick="closeModal()" class="w-1/3 border border-slate-300 hover:bg-slate-50 py-2.5 rounded font-bold text-sm text-slate-600 transition">
+                        Cancel
+                    </button>
+                    <button type="submit" class="w-2/3 bg-safetyOrange-500 hover:bg-safetyOrange-600 text-white py-2.5 rounded font-bold text-sm transition">
+                        Submit Request
+                    </button>
+                </div>
+            </form>
+
+            <!-- Modal Success State -->
+            <div id="modal-success" class="p-8 text-center space-y-4 hidden">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto">
+                    <i class="fa-solid fa-check-double"></i>
+                </div>
+                <h3 class="font-display font-bold text-xl text-slate-900">Request Received!</h3>
+                <p class="text-sm text-slate-600">
+                    Thank you. We have received your request. Joe or a team representative will follow up with you by phone or email within 1 business day.
+                </p>
+                <div class="pt-4">
+                    <button onclick="closeModal()" class="bg-steelBlue-700 hover:bg-steelBlue-600 text-white font-bold py-2 px-6 rounded transition">
+                        Done
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JS SCRIPTS FOR MOBILE DRAWER & MODAL MANAGEMENT -->
+    <script>
+        // Automatic Year Placement
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Responsive Hamburger Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars text-2xl';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        });
+
+        // Close mobile menu on anchor click
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-2xl';
+            });
+        });
+
+        // Modal Functionality
+        const modal = document.getElementById('quote-modal');
+        const quoteForm = document.getElementById('quote-form');
+        const modalSuccess = document.getElementById('modal-success');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            // Clean/Reset visual states
+            quoteForm.classList.remove('hidden');
+            modalSuccess.classList.add('hidden');
+            quoteForm.reset();
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            // Perform simulated transition
+            quoteForm.classList.add('hidden');
+            modalSuccess.classList.remove('hidden');
+        }
+
+        // Close modal on escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
